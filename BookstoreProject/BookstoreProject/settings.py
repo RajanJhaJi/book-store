@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'bookstore',
     'accounts',
     'corsheaders',
-
+    
 ]
 
 MIDDLEWARE = [
@@ -78,6 +78,8 @@ TEMPLATES = [
 ]
 
 CORS_ALLOW_ALL_ORIGINS = True
+
+APPEND_SLASH = True
 
 
 WSGI_APPLICATION = 'BookstoreProject.wsgi.application'
