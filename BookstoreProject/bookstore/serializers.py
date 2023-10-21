@@ -9,4 +9,4 @@ class BookSerializer(serializers.ModelSerializer):
 class AddBookSerializer(serializers.ModelSerializer):
     class Meta:
         model = Book
-        fields = ['id','title','author','publication_year',"isbn"]
+        exclude = ('image',)
