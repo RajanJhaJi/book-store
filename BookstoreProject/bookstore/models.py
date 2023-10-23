@@ -7,15 +7,15 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 class Book(models.Model):
     title = models.CharField(max_length=255)
     author = models.CharField(max_length=255)
-    image = models.CharField(max_length=255)
+    image = models.CharField(max_length=255,blank=True)
     publication_year = models.IntegerField(
         validators=[
             MinValueValidator(1000, message="Publication year must be at least 1000."),
             MaxValueValidator(2023, message="Publication year cannot exceed 2023."),
         ],
     )
-    isbn = models.CharField(max_length=13)
-    description = models.TextField()
+    isbn = models.CharField(max_length=13, blank=True)
+    description = models.TextField(blank=True)
 
     def __str__(self):
         return self.title
